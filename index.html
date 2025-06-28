@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love</title>
+<style>
+  body, html {margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; font-family: 'Segoe UI', sans-serif; background: radial-gradient(circle, #a18cd1, #fbc2eb);}
+  #openingPage {width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+  .button {background: #ff6f91; color: white; padding: 8px 16px; border: none; border-radius: 30px; cursor: pointer; font-size: 1em; margin-top: 10px;}
+  .hidden {display: none;}
+  #birthdayPage {background: linear-gradient(135deg, #ffecd2, #fcb69f); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; position: relative; overflow: hidden; padding: 20px 0;}
+  #quote {font-size: 1.2em; text-align: center; color: #6a0572; margin-bottom: 40px;}
+  
+  .circle-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+  
+  .circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: spin 20s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .circle img {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transform-origin: center;
+  }
+  
+  /* Adjusted image positions */
+  .circle img:nth-child(1) {top: 8%; left: 50%; transform: translate(-50%, -50%);}
+  .circle img:nth-child(2) {top: 30%; left: 82%; transform: translate(-50%, -50%);}
+  .circle img:nth-child(3) {top: 72%; left: 82%; transform: translate(-50%, -50%);}
+  .circle img:nth-child(4) {top: 92%; left: 50%; transform: translate(-50%, -50%);}
+  .circle img:nth-child(5) {top: 72%; left: 18%; transform: translate(-50%, -50%);}
+  .circle img:nth-child(6) {top: 30%; left: 18%; transform: translate(-50%, -50%);}
+  
+  h1 {font-family: 'Brush Script MT', cursive; font-size: 3em; font-weight: bold; margin: 0;}
+  #playButton {margin: 20px auto; display: block;}
+  #circleQuote {
+    position: absolute;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff6f91;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    line-height: 1.4;
+  }
+
+  /* Media Queries for Responsive Design */
+  @media only screen and (max-width: 768px) {
+    h1 {
+      font-size: 2em;
+      text-align: center;
+    }
+    
+    #quote {
+      font-size: 1em;
+      padding: 0 20px;
+    }
+    
+    .circle-container {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .circle img {
+      width: 80px;
+      height: 80px;
+    }
+    
+    #circleQuote {
+      font-size: 1.5em;
+    }
+    
+    .button {
+      padding: 10px 20px;
+      font-size: 0.9em;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    h1 {
+      font-size: 1.5em;
+    }
+    
+    #quote {
+      font-size: 0.9em;
+      margin-bottom: 20px;
+    }
+    
+    .circle-container {
+      width: 250px;
+      height: 250px;
+    }
+    
+    .circle img {
+      width: 60px;
+      height: 60px;
+    }
+    
+    #circleQuote {
+      font-size: 1.2em;
+    }
+    
+    #openingPage p {
+      font-size: 0.9em;
+      padding: 0 15px;
+      text-align: center;
+    }
+  }
+  
+  @media only screen and (max-width: 320px) {
+    h1 {
+      font-size: 1.3em;
+    }
+    
+    .circle-container {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .circle img {
+      width: 50px;
+      height: 50px;
+    }
+    
+    #circleQuote {
+      font-size: 1em;
+    }
+  }
+</style>
+</head>
+<body>
+<div id="openingPage">
+  <h1>Welcome My Love ❤️</h1>
+  <p>"Even your shadow is the companion of my soul. Your smile is my lifelong blessing."</p>
+  <button class="button" onclick="openBirthdayPage()">Open Surprise 🎉</button>
+</div>
+<div id="birthdayPage" class="hidden">
+  <h1>Happy Birthday, My Love! 🎂❤️</h1>
+  <div id="quote">🌸 Even your shadow is the companion of my soul 🌸</div>
+  <button id="playButton" class="button" onclick="playAudio()">Play Surprise 🎵</button>
+  <div class="circle-container" id="imageCircle">
+    <div class="circle">
+     <img src="images/WhatsApp Image 2025-06-28 at 11.33.02 AM (1).jpeg">
+    <img src="images/WhatsApp Image 2025-06-28 at 11.33.02 AM.jpeg">
+    <img src="images/WhatsApp Image 2025-06-28 at 11.33.03 AM (1).jpeg">
+    <img src="images/WhatsApp Image 2025-06-28 at 11.33.03 AM.jpeg">
+    <img src="images/WhatsApp Image 2025-06-28 at 11.33.04 AM (1).jpeg">
+    <img src="images/WhatsApp Image 2025-06-28 at 11.33.04 AM.jpeg">
+    </div>
+    <div class="quote" id="circleQuote"></div>
+  </div>
+  <audio id="birthdayAudio"><source src="WhatsApp Audio 2025-06-28 at 11.33.22 AM.mp4" type="audio/mpeg"></audio>
+</div>
+<script>
+function openBirthdayPage() {
+  document.getElementById('openingPage').style.display = 'none';
+  document.getElementById('birthdayPage').classList.remove('hidden');
+}
+function playAudio() {
+  const audio = document.getElementById('birthdayAudio');
+  audio.currentTime = 0;
+  audio.play();
+  document.getElementById('playButton').style.display = 'none';
+  document.getElementById('imageCircle').style.display = 'flex';
+  document.getElementById('circleQuote').innerHTML = '❤️🎉 I Love You<br>Ammu 🎉❤️';
+}
+</script>
+</body>
+</html>
